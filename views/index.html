@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+
+   <head>
+       
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>Timestamp Microservice</title>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <link href="style.css" rel="stylesheet" type="text/css">
+   </head>
+
+   <body>
+     
+      <div id="main-container">
+        
+       <h2>Timestamp Microservice</h2>
+
+       <h3>A Small Timestamp Api to Return Both Unix and UTC Time in a JSON Format</h3>
+
+        <div class="container">
+
+          <p>
+            Enter a date in the input box below and click "Submit to API" to get your timestamp.
+          </p>
+
+          <input type="text" name="api_extension" id="api_extension" value="" />
+          <br>
+          <br>
+          <button type="button" id="submit_button" onclick="submitToApi()">Submit to API</button> 
+
+          <br>
+          <br>
+        </div >
+
+
+        <div class="container">
+
+
+          <p>
+            If you choose to use this manually, the endpoint for the timestamp is <br>
+            <b>https://solar-jodhpur.glitch.me/api/timestamp/</b>
+          </p>
+
+          <p>
+            Just enter the endpoint, with the date you would like to use at the end 
+            of it, as a URL search and you will get a timestamp as a response. If the 
+            date is left empty and you just enter the endpoint it will return a time 
+            stamp with the current time. Examples follow.
+          </p>
+
+          <br>
+
+
+          <p>
+            <b>To Convert from Unix Time.</b>
+          </p>
+          <p>
+            Example: <a href="api/timestamp/946684800000" target="_blank"><code>https://solar-jodhpur.glitch.me/api/timestamp/946684800000</code></a>
+          </p>
+          <p>
+            Result: {unix: 946684800000, utc: "Sat, 01 Jan 2000 00:00:00 GMT"}
+          </p>
+
+
+
+          <br>
+          <p>
+            <b>To Convert from UTC Time.</b>
+          </p>
+          <p>
+            Example: <a href="api/timestamp/01 Jan 2000" target="_blank"><code>https://solar-jodhpur.glitch.me/api/timestamp/01 Jan 2000</code></a>
+          </p>
+          <p>
+            Result: {unix: 946684800000, utc: "Sat, 01 Jan 2000 00:00:00 GMT"}
+          </p>
+
+
+
+          <br>
+          <p>
+            <b>An Empty Field Returns the Current Date.</b>
+          </p>
+          <p>
+            Example: <a href="api/timestamp/" target="_blank"><code>https://solar-jodhpur.glitch.me/api/timestamp/</code></a>
+          </p>
+          <p>
+            Result: {unix: 1575849600000, utc: "Mon, 09 Dec 2019 00:00:00 GMT"}
+          </p>
+
+          <br>
+          <br>
+          <p>
+            Thanks and enjoy.
+          </p>
+
+          <p>
+            Built by MStonehouse
+          </p>
+
+        </div>
+      </div>
+     <script>
+       function submitToApi() {
+         let documentUrl = 'https://solar-jodhpur.glitch.me/api/timestamp/';
+         let userUrl = document.getElementById('api_extension').value  
+         let fullUrl = documentUrl.concat(userUrl)
+         window.open(fullUrl)
+       }
+     </script>
+     
+   </body>
+
+</html>
